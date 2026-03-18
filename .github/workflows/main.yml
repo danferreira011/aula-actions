@@ -25,3 +25,9 @@ jobs:
     steps:
       - name: "verificação da versão do NodeJs"
         run: node --version
+      - name: "Atualização da Versão do NodeJS 24.14.0"
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24.14.0'
+      - name: "verificação da versão do NodeJs após atualização"
+        run: node --version

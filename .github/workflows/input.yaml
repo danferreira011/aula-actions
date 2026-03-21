@@ -1,7 +1,7 @@
 name: Exemplo Input
 run-name: Exemplo workflow input, executado por ${{github.actor}}
 on:
-  workflow_dispach:
+  workflow_dispatch:
     inputs:
       versao:
         type: string

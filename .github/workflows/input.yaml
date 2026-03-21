@@ -28,7 +28,7 @@ jobs:
   valores_input:
     runs-on: ubuntu-latest
     steps:
-      - name Exibindo o context de input completo
+      - name: Exibindo o context de input completo
         run: echo "${{toJson(inputs)}}"
       - name: Exibindo valores individualmente
         run: |

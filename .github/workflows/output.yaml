@@ -5,6 +5,9 @@ on:
 jobs:
   gerando_output:
     runs-on: ubuntu-latest
+    outputs:
+      output-shell: ${{steps.exemplo_output.outputs.action_random}}
+      output-generatedpassword: ${{steps.generatedpassword.outputs.password}}
     steps:
       - name: Gerando output com Shell
         id: exemplo_output
@@ -23,3 +26,11 @@ jobs:
 
       - name: Exibindo o output da action de passwd
         run: echo "${{steps.generatedpassword.outputs.password}}"
+  exibindo-valores: 
+    needs: [gerando_output]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exibindo outputs do gerando outputs
+        run: |
+          echo "Output Shell: ${{needs.gerando_output.outputs.output-shell}}"
+          echo "Output Password: ${{needs.gerando_output.outputs.output-generatedpassword}}"

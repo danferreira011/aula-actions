@@ -15,4 +15,4 @@ jobs:
         steps:
             
             - name: Action Teste
-              run: echo "Action executada em main e feature "
+              run: echo "Action executada em feature "

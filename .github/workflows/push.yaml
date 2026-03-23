@@ -1,0 +1,12 @@
+name: Evento Push
+on:
+    push:
+        branches: ["main", "feature/*"]
+
+jobs:
+    teste:
+        runs-on: ubuntu-latest
+        steps:
+            
+            - name: Action Teste
+              run: echo "Action executada em main e feature "

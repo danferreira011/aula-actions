@@ -1,0 +1,14 @@
+name: Evento Schedule
+on:
+    schedule:
+        - cron: "*/5 * * * *"   
+        - cron: "0 12 1 * *"   
+                
+jobs:
+    teste:
+        permissions: write-all
+        runs-on: ubuntu-latest
+        steps:
+            
+            - name: Action Teste
+              run: echo "Action executada em main e feature "

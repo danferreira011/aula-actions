@@ -1,0 +1,12 @@
+name: Evento Pull Request
+on:
+    pull_request:
+        branches: ["main"]
+        
+jobs:
+    teste:
+        runs-on: ubuntu-latest
+        steps:
+            
+            - name: Action Teste
+              run: echo "Action executada em main e feature "

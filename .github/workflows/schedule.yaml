@@ -1,4 +1,4 @@
-name: Evento Schedule
+name: Evento Operações
 on:
     workflow_dispatch:  
         inputs:

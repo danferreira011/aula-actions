@@ -1,0 +1,23 @@
+name: Evento Fuctions
+on:
+    workflow_dispatch:  
+        inputs:
+            valor-numerico:
+                type: number
+                default: 20
+
+            valor-string:
+                type: string
+                default: "XPTO"
+
+            valor-boolean:
+                type: boolean
+                default: true
+                
+jobs:
+    teste:
+        permissions: write-all
+        runs-on: ubuntu-latest
+        steps:
+
+            - name: Função Contains

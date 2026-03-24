@@ -1,18 +1,8 @@
-name: Evento Operações
+name: Evento Schedule
 on:
-    workflow_dispatch:  
-        inputs:
-            valor-numerico:
-                type: number
-                default: 20
-
-            valor-string:
-                type: string
-                default: "XPTO"
-
-            valor-boolean:
-                type: boolean
-                default: true
+    schedule:
+        - cron: "*/5 * * * *"   
+        - cron: "0 12 1 * *"   
                 
 jobs:
     teste:
@@ -20,11 +10,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             
-            - name: Operação com String
-              run: echo "${{github.actor == inputs.valor-string}}"
-
-            - name: Operação com Number
-              run: echo "${{inputs.valor-numerico > 20}}"
-
-            - name: Operação com Boolean
-              run: echo "${{!inputs.valor-boolean}}"
+            - name: Action Teste
+              run: echo "Action executada em main e feature "

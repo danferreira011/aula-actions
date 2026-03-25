@@ -9,3 +9,20 @@ jobs:
         steps:
             - name: Executando na main
               run: echo "Executado na main"
+    todos:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Execução em Featutre
+              if: ${{contains(github.ref, 'refs/heads/feature')}}
+              run: echo "Execução en Feature"
+              
+            - name: Execução em Hotfix
+              if: ${{contains(github.ref, 'refs/heads/hotfix')}}
+              run: echo "Execução en Hotfix"
+
+            - name: Execução em Main
+              if: ${{github.ref == 'refs/heads/main'}}
+              run: echo "Execução en Main"
+
+            - name: Execução em Todos              
+              run: echo "Execução en Todos"

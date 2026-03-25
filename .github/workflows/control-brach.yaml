@@ -1,0 +1,10 @@
+name: Workflow Control Branch
+on:
+    push:
+jobs: 
+    apenas-main:
+        name: Essejob só executa na branch main
+        runs-on: ubuntu-latest
+        steps:
+            - name: Executando na main
+              run: echo "Executado na main"

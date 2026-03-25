@@ -21,3 +21,10 @@ jobs:
         steps:
 
             - name: Função Contains
+              run: echo "${{ contains(inputs.valor-string, github.actor) }}"
+
+            - name: Função Format
+              run: "echo ${{ format('Formato String: {0} - Formato Numer: {1} - Formato Boolean: {2}', inputs.valor-string, inputs.valor-numerico, inputs.valor-boolean) }}"
+
+            - name: Função Json
+              run: echo "${{toJson(github)}}"

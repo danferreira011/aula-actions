@@ -1,6 +1,10 @@
 name: Workflow Control Branch
 on:
-    push:
+    # push: # esse é o original
+
+    workflow_dispatch: #somente para controle
+
+
 jobs: 
     apenas-main:
         if: ${{ github.ref == 'refs/heads/main'}}

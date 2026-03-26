@@ -1,6 +1,7 @@
 name: Workflow Status Steps
 on:
-    push:
+    # push: #original
+    workflow_dispatch: #controle
 jobs: 
     apenas-main:
         if: ${{ github.ref == 'refs/heads/main'}}

@@ -10,6 +10,7 @@ jobs:
 
     fluxo-02:
         runs-on: ubuntu-latest
+        needs: [fluxo-01]
         steps: 
             - name: Success execution
               run: echo "Success Exec"

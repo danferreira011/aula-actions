@@ -1,0 +1,15 @@
+name: Workflow Status Steps
+on:
+    push:
+jobs:
+    fluxo-01:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Will Fail
+              run: l
+
+    fluxo-02:
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Success execution
+              run: echo "Success Exec"

@@ -1,6 +1,16 @@
 name: CI/CD Fake com Input
 on: 
     workflow_dispatch:  
+        inputs: # exemplo com input 
+            ambiente:
+                type: choice
+                default: "desenvolvimento"
+                required: true
+                description: "Ambiente do deploy"
+                options:
+                    - desenvolvimento
+                    - homologacao
+                    - produção
 jobs:
     CI:
         runs-on: ubuntu-latest
@@ -17,4 +27,5 @@ jobs:
         needs: [CI]
         uses: danferreira011/aula-actions/.github/workflows/deploy-fake_input.yaml@main
         with:
-            ambiente: producao
+            # ambiente: producao # exemplo 1
+            ambiente: ${{inputs.ambiente}}

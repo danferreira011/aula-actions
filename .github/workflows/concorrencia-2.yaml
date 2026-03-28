@@ -1,4 +1,4 @@
-name: Workflow Concorrencia #concorrencia a nível de job
+name: Workflow Concorrencia Job#concorrencia a nível de job
 run-name: Workflow Concorrencia ${{github.run_number}}
 on:
     workflow_dispatch:

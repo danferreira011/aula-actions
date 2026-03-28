@@ -1,0 +1,13 @@
+name: Workflow Concorrencia
+run-name: Workflow Concorrencia ${{github.run_number}}
+on:
+    workflow_dispatch:
+concurrency: pipeline-aula        
+jobs:
+    fluxo-01:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Job teste
+              run: |
+                sleep 120;
+                echo "Action exec Job 1"

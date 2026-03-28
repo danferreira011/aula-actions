@@ -1,0 +1,26 @@
+name: Workflow Concorrencia #concorrencia a nível de job
+run-name: Workflow Concorrencia ${{github.run_number}}
+on:
+    workflow_dispatch:
+        inputs: #input para o teste 2
+            chave:
+                type: string
+                default: pipeline-aula
+jobs:
+    fluxo-01:
+        runs-on: ubuntu-latest
+        concurrency: ${{inputs.chave}} #teste de concorrencia 
+        steps:
+            - name: Job teste
+              run: |
+                sleep 120;
+                echo "Action exec Job 1"
+  
+    fluxo-02:
+        runs-on: ubuntu-latest
+        needs: [fluxo-01] #dependencia
+        steps:
+            - name: Job teste 2
+              run: |
+                sleep 120;
+                echo "Action exec Job 2"

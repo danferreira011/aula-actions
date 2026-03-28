@@ -16,5 +16,5 @@ jobs:
                 
             - name: Exibition Version e Platform
               run: |
-                node --verssion
+                node --version
                 echo ${{runner.os}}

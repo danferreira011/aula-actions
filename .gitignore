@@ -1,1 +1,7 @@
 *.tar.gz
+*.pem
+*.log
+*.env
+*.key
+*.crt
+*.pfx

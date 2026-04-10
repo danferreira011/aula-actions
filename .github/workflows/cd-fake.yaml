@@ -10,14 +10,18 @@ on:
 jobs:
     deploy-fake-homolog:
         runs-on: ubuntu-latest
-        environment: homologacao #{{inputs.ambiente}}
+        environment: # homologacao #{{inputs.ambiente}}
+            name: homologacao
+            url: https://www.danferreira.tec.br/
         steps:
             - name: Fake deploy no ambiente
               run: echo "Deploy no ambiente de ${{vars.AMBIENTE_DEPLOY}}"
 
     teste-fake:
         runs-on: ubuntu-latest
-        environment: homologacao 
+        environment: #homologacao
+            name: homologacao
+            url: https://www.danferreira.tec.br/
         needs: [deploy-fake-homolog]
         steps:
             - name: Teste fake teste no ambiente
@@ -25,7 +29,9 @@ jobs:
 
     deploy-fake-producao:
         runs-on: ubuntu-latest
-        environment: producao
+        environment: #producao
+            name: producao
+            url: https://www.danferreira.tec.br/
         needs: [teste-fake]
         steps:
             - name: Deploy fake deploy no ambiente

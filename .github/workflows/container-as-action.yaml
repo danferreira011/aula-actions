@@ -1,0 +1,15 @@
+name: Teste Container as Action
+on: 
+    workflow_dispatch:  
+jobs:
+    build-test:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Execução do Runner
+              run: cat /etc/os-release
+
+            - name: Execução no Container
+              uses: docker://alipne:latest
+              with:
+                entrypoint: cat
+                args: /etc/os-release

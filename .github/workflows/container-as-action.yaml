@@ -9,7 +9,7 @@ jobs:
               run: cat /etc/os-release
 
             - name: Execução no Container
-              uses: docker://alipne:latest
+              uses: docker://alpine:latest
               with:
                 entrypoint: cat
                 args: /etc/os-release

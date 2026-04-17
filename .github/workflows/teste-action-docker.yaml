@@ -1,0 +1,26 @@
+name: "Teste de Action - Docker"
+on:
+    issues:
+        types: [opened]
+    pull_request:
+        types: [opened]
+jobs:
+    action-job-composite:
+        permissions:
+            issues: write
+            pull-requests: write
+        runs-on: ubuntu-latest
+        name: Execução de Custom Action Docker
+        steps:
+            - name: Adicionando Comentário
+              id: comment_step
+              uses: danferreira011/action-docker@main   # owner/action@versão
+              with:
+                GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+                issue-id: ${{github.event.issue.number}}
+                comment: "Teste de Comentário Docker"
+                GITHUB_REPOSITORY: ${{github.repository}}
+
+            - name: Mostrar ID Comment
+              run: |
+                echo "ID do comentário é: ${{steps.comment_step.outputs.comment-id}}"

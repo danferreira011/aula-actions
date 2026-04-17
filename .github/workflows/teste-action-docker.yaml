@@ -14,7 +14,7 @@ jobs:
         steps:
             - name: Adicionando Comentário
               id: comment_step
-              uses: danferreira011/action-docker@main   # owner/action@versão
+              uses: danferreira011/action-docker@v1.0   # owner/action@versão
               with:
                 GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
                 issue-id: ${{github.event.issue.number}}
